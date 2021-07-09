@@ -4,6 +4,7 @@ summary := Helper utilities and conversions for common program configurations
 STD := c++20
 
 define common.libs
+ ext++
  yaml-cpp
 endef
 
