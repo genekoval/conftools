@@ -5,6 +5,8 @@ STD := c++20
 
 define common.libs
  ext++
+ fmt
+ timber
  yaml-cpp
 endef
 
