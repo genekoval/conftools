@@ -1,5 +1,7 @@
 #pragma once
 
+#include <conftools/database.h>
+
 #include <fmt/format.h>
 #include <netcore/netcore>
 #include <yaml-cpp/yaml.h>
@@ -98,6 +100,7 @@ namespace YAML {
         }
     };
 
+    CONVERT(conftools::database_connection);
     CONVERT(ext::group);
     CONVERT(ext::user);
     CONVERT(std::filesystem::path);
