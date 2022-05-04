@@ -3,28 +3,18 @@ summary := Helper utilities and conversions for common program configurations
 
 STD := c++20
 
-define common.libs
- ext++
- fmt
- timber
- yaml-cpp
-endef
+common.libs := ext++ fmt timber yaml-cpp
 
 library := lib$(project)
 $(library).type := shared
-define $(library).libs
- $(common.libs)
-endef
+$(library).libs := $(common.libs)
 
 install := $(library)
 targets := $(install)
 
 test.deps = $(library)
-define test.libs
- $(project)
- $(common.libs)
- gtest
- gtest_main
-endef
+test.libs := $(project) $(common.libs) gtest gtest_main
+
+files := $(include) $(src) Makefile VERSION
 
 include mkbuild/base.mk
