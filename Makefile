@@ -15,6 +15,6 @@ targets := $(install)
 test.deps = $(library)
 test.libs := $(project) $(common.libs) gtest gtest_main
 
-files := $(include) $(src) Makefile VERSION
+files = $(include) $(src) Makefile VERSION
 
 include mkbuild/base.mk
