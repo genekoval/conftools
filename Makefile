@@ -3,7 +3,7 @@ summary := Helper utilities and conversions for common program configurations
 
 STD := c++20
 
-common.libs := ext++ fmt timber yaml-cpp
+common.libs := ext++ fmt netcore timber yaml-cpp
 
 library := lib$(project)
 $(library).type := shared

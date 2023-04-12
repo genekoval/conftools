@@ -100,11 +100,13 @@ namespace YAML {
         }
     };
 
-    CONVERT(conftools::database_connection);
-    CONVERT(ext::group);
-    CONVERT(ext::user);
-    CONVERT(std::filesystem::path);
-    CONVERT(std::filesystem::perms);
-    CONVERT(netcore::unix_socket);
-    CONVERT(timber::level);
+    CONVERT(conftools::database_connection)
+    CONVERT(ext::group)
+    CONVERT(ext::user)
+    CONVERT(std::filesystem::path)
+    CONVERT(std::filesystem::perms)
+    CONVERT(netcore::endpoint)
+    CONVERT(netcore::inet_socket)
+    CONVERT(netcore::unix_socket)
+    CONVERT(timber::level)
 }
