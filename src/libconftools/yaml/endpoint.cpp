@@ -10,9 +10,9 @@ namespace YAML {
     ) -> bool {
         endpoint.endpoint = node.as<netcore::endpoint>();
 
-        if (node["timeout"]) {
-            endpoint.timeout = seconds(node["timeout"].as<long>());
-        }
+        endpoint.timeout = node["timeout"] ?
+            seconds(node["timeout"].as<long>()) :
+            seconds::zero();
 
         return true;
     }
