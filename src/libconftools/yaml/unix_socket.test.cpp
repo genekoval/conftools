@@ -21,11 +21,8 @@ TEST_F(YamlUnixSocketTest, ParsePath) {
 }
 
 TEST_F(YamlUnixSocketTest, ParseMode) {
-    constexpr auto expected =
-        perms::owner_read |
-        perms::owner_write |
-        perms::group_read |
-        perms::others_read;
+    constexpr auto expected = perms::owner_read | perms::owner_write |
+                              perms::group_read | perms::others_read;
 
     const auto socket = load(R"(
 path: /run/conf/tools.sock

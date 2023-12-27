@@ -7,10 +7,8 @@ using netcore::inet_socket;
 using netcore::unix_socket;
 
 namespace YAML {
-    auto convert<endpoint>::decode(
-        const Node& node,
-        endpoint& endpoint
-    ) -> bool {
+    auto convert<endpoint>::decode(const Node& node, endpoint& endpoint)
+        -> bool {
         if (node.IsScalar()) {
             endpoint = netcore::parse_endpoint(node.as<std::string>());
             return true;

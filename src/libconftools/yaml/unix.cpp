@@ -2,23 +2,18 @@
 
 namespace {
     auto is_number(std::string_view string) -> bool {
-        return
-            !string.empty() &&
-            std::find_if_not(
-                string.begin(),
-                string.end(),
-                [](unsigned char c) {
-                    return std::isdigit(c);
-                }
-            ) == string.end();
+        return !string.empty() &&
+               std::find_if_not(
+                   string.begin(),
+                   string.end(),
+                   [](unsigned char c) { return std::isdigit(c); }
+               ) == string.end();
     }
 }
 
 namespace YAML {
-    auto convert<ext::group>::decode(
-        const Node& node,
-        ext::group& group
-    ) -> bool {
+    auto convert<ext::group>::decode(const Node& node, ext::group& group)
+        -> bool {
         const auto g = node.as<std::string>();
 
         if (is_number(g)) {
@@ -29,10 +24,7 @@ namespace YAML {
         return true;
     }
 
-    auto convert<ext::user>::decode(
-        const Node& node,
-        ext::user& user
-    ) -> bool {
+    auto convert<ext::user>::decode(const Node& node, ext::user& user) -> bool {
         const auto u = node.as<std::string>();
 
         if (is_number(u)) {
